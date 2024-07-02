@@ -1,8 +1,8 @@
 
 flux-install:
-	@kubectl apply -f flux/install.yaml
-	@kubectl apply -f flux/git-source.yaml
-	@kubectl apply -f flux/app.yaml
+	@kubectl apply -f flux/tuned-install/install.yaml
+	@kubectl apply -f flux/tuned-install/git-source.yaml
+	@kubectl apply -f flux/tuned-install/app.yaml
 
 flux-init-wait:
 	@echo 'Waiting for flux to initialize...'

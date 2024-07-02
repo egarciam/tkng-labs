@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: ingress-nginx
-  namespace: flux
+  namespace: flux-system
 spec:
   interval: 1m
   url: https://kubernetes.github.io/ingress-nginx
@@ -21,7 +21,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx
-        namespace: flux
+        namespace: flux-system
       interval: 1m
   values:
     admissionWebhooks:
@@ -31,7 +31,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: lb-controller
-  namespace: flux
+  namespace: flux-system
 spec:
   interval: 10m0s
   path: ./manifests/metallb-l2

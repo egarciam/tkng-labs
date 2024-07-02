@@ -2,17 +2,17 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     pod-security.kubernetes.io/warn: restricted
     pod-security.kubernetes.io/warn-version: latest
-  name: flux
+  name: flux-system
 ---
 apiVersion: v1
 kind: ResourceQuota
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: critical-pods
   namespace: flux-system
@@ -34,7 +34,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: alerts.notification.toolkit.fluxcd.io
 spec:
@@ -639,7 +639,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: buckets.source.toolkit.fluxcd.io
 spec:
@@ -1188,7 +1188,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: gitrepositories.source.toolkit.fluxcd.io
 spec:
@@ -2484,7 +2484,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: helmcharts.source.toolkit.fluxcd.io
 spec:
@@ -3502,7 +3502,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: helm-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: helmreleases.helm.toolkit.fluxcd.io
 spec:
@@ -7256,7 +7256,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: helmrepositories.source.toolkit.fluxcd.io
 spec:
@@ -8148,7 +8148,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: image-reflector-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: imagepolicies.image.toolkit.fluxcd.io
 spec:
@@ -8583,7 +8583,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: image-reflector-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: imagerepositories.image.toolkit.fluxcd.io
 spec:
@@ -9112,7 +9112,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: image-automation-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: imageupdateautomations.image.toolkit.fluxcd.io
 spec:
@@ -9854,7 +9854,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: kustomize-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: kustomizations.kustomize.toolkit.fluxcd.io
 spec:
@@ -11612,7 +11612,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: ocirepositories.source.toolkit.fluxcd.io
 spec:
@@ -12049,7 +12049,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: providers.notification.toolkit.fluxcd.io
 spec:
@@ -12616,7 +12616,7 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.15.0
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: receivers.notification.toolkit.fluxcd.io
 spec:
@@ -13323,7 +13323,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: helm-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: helm-controller
   namespace: flux-system
@@ -13333,7 +13333,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: image-automation-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: image-automation-controller
   namespace: flux-system
@@ -13343,7 +13343,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: image-reflector-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: image-reflector-controller
   namespace: flux-system
@@ -13353,7 +13353,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: kustomize-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: kustomize-controller
   namespace: flux-system
@@ -13363,7 +13363,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: notification-controller
   namespace: flux-system
@@ -13373,7 +13373,7 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: source-controller
   namespace: flux-system
@@ -13382,7 +13382,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: crd-controller
 rules:
@@ -13475,7 +13475,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
@@ -13500,7 +13500,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
@@ -13524,7 +13524,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: cluster-reconciler
 roleRef:
@@ -13543,7 +13543,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: crd-controller
 roleRef:
@@ -13575,7 +13575,7 @@ kind: Service
 metadata:
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: notification-controller
@@ -13595,7 +13595,7 @@ kind: Service
 metadata:
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: source-controller
@@ -13615,7 +13615,7 @@ kind: Service
 metadata:
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: webhook-receiver
@@ -13635,7 +13635,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: helm-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: helm-controller
@@ -13655,7 +13655,7 @@ spec:
     spec:
       containers:
       - args:
-        - --events-addr=http://notification-controller.flux.svc.cluster.local./
+        - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
         - --watch-all-namespaces
         - --log-level=info
         - --log-encoding=json
@@ -13726,7 +13726,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: image-automation-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: image-automation-controller
@@ -13746,7 +13746,7 @@ spec:
     spec:
       containers:
       - args:
-        - --events-addr=http://notification-controller.flux.svc.cluster.local./
+        - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
         - --watch-all-namespaces
         - --log-level=info
         - --log-encoding=json
@@ -13816,7 +13816,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: image-reflector-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: image-reflector-controller
@@ -13836,7 +13836,7 @@ spec:
     spec:
       containers:
       - args:
-        - --events-addr=http://notification-controller.flux.svc.cluster.local./
+        - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
         - --watch-all-namespaces
         - --log-level=info
         - --log-encoding=json
@@ -13910,7 +13910,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: kustomize-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: kustomize-controller
@@ -13930,7 +13930,7 @@ spec:
     spec:
       containers:
       - args:
-        - --events-addr=http://notification-controller.flux.svc.cluster.local./
+        - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
         - --watch-all-namespaces
         - --log-level=info
         - --log-encoding=json
@@ -14001,7 +14001,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: notification-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: notification-controller
@@ -14096,7 +14096,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: source-controller
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
     control-plane: controller
   name: source-controller
@@ -14118,7 +14118,7 @@ spec:
     spec:
       containers:
       - args:
-        - --events-addr=http://notification-controller.flux.svc.cluster.local./
+        - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
         - --watch-all-namespaces
         - --log-level=info
         - --log-encoding=json
@@ -14199,7 +14199,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: allow-egress
   namespace: flux-system
@@ -14218,7 +14218,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: allow-scraping
   namespace: flux-system
@@ -14237,7 +14237,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   labels:
-    app.kubernetes.io/instance: flux
+    app.kubernetes.io/instance: flux-system
     app.kubernetes.io/part-of: flux
   name: allow-webhooks
   namespace: flux-system

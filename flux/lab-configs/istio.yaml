@@ -7,7 +7,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: istio
-  namespace: flux
+  namespace: flux-system
 spec:
   interval: 1m0s
   ref:
@@ -27,7 +27,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: istio
-        namespace: flux
+        namespace: flux-system
       interval: 1m
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
@@ -43,7 +43,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: istio
-        namespace: flux
+        namespace: flux-system
       interval: 1m
   values:
     meshConfig:
@@ -62,5 +62,5 @@ spec:
       sourceRef:
         kind: GitRepository
         name: istio
-        namespace: flux
+        namespace: flux-system
       interval: 1m
