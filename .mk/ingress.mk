@@ -49,8 +49,8 @@ egress-prep:
 
 egress-setup: egress-prep
 	kubectl apply -f flux/lab-configs/egress.yaml
-	kubectl patch kustomizations -n flux egress-gw --patch '{"spec": {"postBuild": {"substitute": {"destination_cidr": "$(KIND_BRIDGE_SUBNET)"}}}}' --type=merge
-	kubectl patch kustomizations -n flux egress-gw --patch '{"spec": {"postBuild": {"substitute": {"egress_ip": "$(CONTROL_PLANE_NODE_IP)"}}}}' --type=merge
+	kubectl patch kustomizations -n flux-system egress-gw --patch '{"spec": {"postBuild": {"substitute": {"destination_cidr": "$(KIND_BRIDGE_SUBNET)"}}}}' --type=merge
+	kubectl patch kustomizations -n flux-system egress-gw --patch '{"spec": {"postBuild": {"substitute": {"egress_ip": "$(CONTROL_PLANE_NODE_IP)"}}}}' --type=merge
 
 egress-cleanup:
 	-docker rm -f echo
