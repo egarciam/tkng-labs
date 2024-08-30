@@ -13,7 +13,7 @@ spec:
   postBuild:
     substitute:
       destination_cidr: "172.18.0.0/16"
-      egress_ip: "172.18.0.5"
+      egress_ip: "172.18.0.7"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
